@@ -1,5 +1,5 @@
 import Link from "next/link";
-import LayoutError from "@/components/layouts/error";
+import LayoutError from "@/components/layouts/Error";
 
 export default function NotFound() {
   return (

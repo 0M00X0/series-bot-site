@@ -1,6 +1,7 @@
 "use client";
 import { useSession, signIn, signOut } from "next-auth/react";
-
+import ViewPage from "@/components/roles/View";
+import Welcome from "@/components/core/Welcome";
 export default function Login() {
   const { data: session } = useSession();
 
@@ -37,15 +38,15 @@ export default function Login() {
       </>
     );
   }
+
+
+  const roles = process.env.ROLES_ADMIN;
+
   return (
     <>
-      <h1>
-        Hello {session?.user?.name ?? session?.user?.email}! You can now access our
-        <br />
-        ypur role is {session?.user?.role}
-        <br />
-        <button onClick={() => signOut()}>Sign out</button>
-      </h1>
+      <ViewPage RolesView={roles}>
+        <Welcome />
+      </ViewPage>
     </>
   );
-}
+} 

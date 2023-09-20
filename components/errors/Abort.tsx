@@ -1,35 +1,11 @@
 import { useState } from "react";
 import Link from "next/link";
-import LayoutError from "@/components/layouts/error";
-export default function Abort({ statusCode = 404 }) {
-  const [message, setMessage] = useState("This page could not be found");
-
-  if (statusCode === 500) {
-    setMessage("Internal Server Error");
-  } else if (statusCode === 404) {
-    setMessage("This page could not be found");
-  } else if (statusCode === 403) {
-    setMessage("Forbidden");
-  } else if (statusCode === 401) {
-    setMessage("Unauthorized");
-  } else if (statusCode === 400) {
-    setMessage("Bad Request");
-  } else if (statusCode === 503) {
-    setMessage("Service Unavailable");
-  } else if (statusCode === 502) {
-    setMessage("Bad Gateway");
-  } else if (statusCode === 501) {
-    setMessage("Not Implemented");
-  } else if (statusCode === 408) {
-    setMessage("Request Timeout");
-  } else if (statusCode === 407) {
-    setMessage("Proxy Authentication Required");
-  } else if (statusCode === 406) {
-    setMessage("Not Acceptable");
-  } else if (statusCode === 405) {
-    setMessage("Method Not Allowed");
-  }
-
+import LayoutError from "@/components/layouts/Error";
+export default function Abort({
+  statusCode = 404,
+  message = "This page could not be found",
+}) {
+  
   return (
     <LayoutError
       content={

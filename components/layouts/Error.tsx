@@ -3,7 +3,7 @@ export interface LayoutErrorProps {
   content: React.ReactNode;
 }
 
-export default function LayoutError({ children, content }: LayoutErrorProps) {
+export default function LayoutError({ children, content = null }: LayoutErrorProps) {
   return (
     <>
       <div className="min-h-screen flex items-center justify-center flex-col space-y-4">

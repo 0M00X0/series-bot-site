@@ -5,7 +5,7 @@ import { NextUIProvider } from "@nextui-org/react";
 import { SessionProvider } from "next-auth/react";
 import { Session } from "next-auth";
 import { Suspense } from 'react'
-import Loading from "@/components/Loading";
+import Loading from "@/components/core/Loading";
 export interface ProvidersProps {
   children: React.ReactNode;
   session: Session;

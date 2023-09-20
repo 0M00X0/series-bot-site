@@ -1,7 +1,7 @@
 "use client"; // Error components must be Client Components
 
 import { useEffect } from "react";
-import LayoutError from "@/components/layouts/error";
+import LayoutError from "@/components/layouts/Error";
 
 export default function Error({
   error,
