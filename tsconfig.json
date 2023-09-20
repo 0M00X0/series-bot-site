@@ -20,7 +20,7 @@
     ],
     "paths": {
       "@/*": ["./*"],
-      "db": ["./prisma/prisma"],
+      "db": ["./lib/prisma"],
       "abort" : ["./components/errors/Abort"],
     }
   },

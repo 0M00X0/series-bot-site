@@ -1,16 +1,8 @@
 "use client";
-import { useSession, signIn } from "next-auth/react";
-import axios from "axios";
-import Link from "next/link";
-import Loading from "@/components/Loading";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 export default function Login() {
   const { data: session } = useSession();
-  return (
-    <>
-    <Loading />
-    </>
-  );
 
   if (!session) {
     return (
@@ -52,9 +44,7 @@ export default function Login() {
         <br />
         ypur role is {session?.user?.role}
         <br />
-        <Link href="/about" legacyBehavior>
-          <a>about</a>
-        </Link>
+        <button onClick={() => signOut()}>Sign out</button>
       </h1>
     </>
   );
