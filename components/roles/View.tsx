@@ -12,7 +12,11 @@ const ViewPage = ({ RolesView, children }: LayoutProps) => {
   const yourRole = session?.user?.role;
 
   if (RolesView.includes(yourRole)) {
-    return <>{children}</>;
+    return (
+      <>
+        {children}
+      </>
+    );
   }
 
   return (

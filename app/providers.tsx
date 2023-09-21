@@ -6,12 +6,20 @@ import { SessionProvider } from "next-auth/react";
 import { Session } from "next-auth";
 import { Suspense } from 'react'
 import Loading from "@/components/core/Loading";
+
+import i18n, { changeLanguage } from '@/lib/i18n';
+import { useEffect } from "react";
 export interface ProvidersProps {
   children: React.ReactNode;
   session: Session;
 }
 
 export function Providers({ children, session }: ProvidersProps) {
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem('language');
+    const language = savedLanguage || 'en';
+    changeLanguage(language);
+  }, []);
   return (
     <>
       <SessionProvider session={session}>

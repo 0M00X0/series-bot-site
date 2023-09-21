@@ -2,4 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root,
+[data-theme] {
+  color: hsl(var(--nextui-foreground));
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+}
+
+:root {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-light-bg-opacity));
+}
+
+::-webkit-scrollbar-thumb {
+  --tw-border-opacity: 1;
+  background-color: rgba(217,217,227,.8);
+  border-color: rgba(255,255,255,var(--tw-border-opacity));
+  border-radius: 9999px;
+  border-width: 1px;
+}
+
+::-webkit-scrollbar {
+  height: 1rem;
+  width: 0.5rem;
+}

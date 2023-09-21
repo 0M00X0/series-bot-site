@@ -65,3 +65,11 @@ model VerificationToken {
 
   @@unique([identifier, token])
 }
+
+model Settings {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  value     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
