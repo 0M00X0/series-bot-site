@@ -48,6 +48,7 @@ model User {
   id            String    @id @default(cuid())
   name          String?
   email         String?   @unique
+  role          UserRole  @default(USER)
   emailVerified DateTime?
   password      String?
   image         String?
@@ -55,7 +56,6 @@ model User {
   updatedAt     DateTime  @updatedAt
   accounts      Account[]
   sessions      Session[]
-  role          UserRole  @default(USER)
 }
 
 model VerificationToken {
@@ -67,9 +67,10 @@ model VerificationToken {
 }
 
 model Settings {
-  id        String   @id @default(cuid())
-  name      String   @unique
-  value     String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id         String   @id @default(cuid())
+  slug       String   @unique
+  value      String
+  canDeleted Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
 }
