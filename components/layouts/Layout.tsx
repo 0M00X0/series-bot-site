@@ -3,13 +3,16 @@ import React, { ReactNode } from "react";
 
 interface LayoutProps {
   children: ReactNode;
+  classSidebar?: string;
 }
 
-export default function Layout({ children }: LayoutProps) {
+export default function Layout({ children, classSidebar }: LayoutProps) {
   return (
     <>
       <div className="flex flex-col sm:flex-row">
-        <Sidebar>{children}</Sidebar>
+        <Sidebar classGrid={classSidebar}>
+          {children}
+          </Sidebar>
       </div>
     </>
   );

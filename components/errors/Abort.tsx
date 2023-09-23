@@ -4,16 +4,18 @@ import LayoutError from "@/components/layouts/Error";
 export default function Abort({
   statusCode = 404,
   message = "This page could not be found",
+  link = "/",
+  messageLink = "Go Home",
 }) {
   
   return (
     <LayoutError
       content={
         <Link
-          href="/"
+          href={link}
           className="dark:text-white p-2 px-4 rounded-lg duration-300 animate-pulse text-center"
         >
-          Go Home
+          {messageLink}
         </Link>
       }
     >

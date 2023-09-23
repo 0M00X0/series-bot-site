@@ -1,3 +1,4 @@
+"use client"
 import { useSession } from "next-auth/react";
 import React, { ReactNode } from "react";
 import Abort from "@/components/errors/Abort";

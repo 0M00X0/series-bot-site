@@ -4,6 +4,8 @@ const nextConfig = {
     serverActions: true,
   },
   env: {
+    SITE_URL: process.env.SITE_URL,
+    DASHBOARD_URL: process.env.DASHBOARD_URL,
     ROLES_ADMIN: JSON.stringify(["ADMIN"]),
     ROLES_EDITOR: JSON.stringify(["ADMIN", "EDITOR"]),
     ROLES_PUBLISHER: JSON.stringify(["ADMIN", "EDITOR", "PUBLISHER"]),
@@ -20,16 +22,12 @@ const nextConfig = {
         protocol: "https",
         hostname: "flowbite.com",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.discordapp.com",
+      },
     ],
   },
-  reactStrictMode: false,
-  webpack5: true,
-  webpack: (config) => {
-    config.resolve.fallback = { fs: false }
-
-    return config
-  },
-
 }
 
 module.exports = nextConfig
