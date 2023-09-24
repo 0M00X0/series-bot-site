@@ -64,6 +64,7 @@ export default function EditSeriesForm({ seriesdata }: ViewSeriesFormProps) {
     axios
       .put(`/api/series/${seriesdata?.slug}`, data)
       .then((res) => {
+        router.push("/dashboard/series");
       })
       .catch((err) => {
         setError(err);
