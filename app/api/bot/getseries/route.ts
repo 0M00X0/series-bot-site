@@ -4,12 +4,12 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(request: Request) {
   const url = new URL(request.url);
-  const id = Number(url.searchParams.get("id") ?? 1);
+  const messageId = Number(url.searchParams.get("messageId") ?? 1);
 
   try {
-    const GetSeries = await prisma.getSeries.findUnique({
+    const GetSeries = await prisma.getSeries.findMany({
       where: {
-        id: String(id),
+        messageId: String(messageId),
       },
     });
     return NextResponse.json(GetSeries);
