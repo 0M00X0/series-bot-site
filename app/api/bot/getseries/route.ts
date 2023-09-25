@@ -46,7 +46,7 @@ export async function PUT(request: Request) {
   try {
     const GetSeries = await prisma.getSeries.update({
       where: {
-        id: String(id),
+        id: id,
       },
       data: {
         page: body.page,
