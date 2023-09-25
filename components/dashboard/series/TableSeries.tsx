@@ -18,7 +18,7 @@ export default function TableSeries() {
   });
   const [error, setError] = useState(null);
   const [page, setPage] = useState(1);
-  const [perPage, setPerPage] = useState(1);
+  const [perPage, setPerPage] = useState(10);
   const [search, setSearch] = useState("");
   const totalPages = Math.ceil(series.all_series / perPage);
 
