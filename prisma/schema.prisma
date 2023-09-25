@@ -98,7 +98,7 @@ model Series {
 
 model GetSeries {
   id        String  @id @default(cuid())
-  messageId String
+  messageId String  @unique
   per_page  Int
   page      Int
   search    String?

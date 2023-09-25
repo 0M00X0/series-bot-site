@@ -7,7 +7,7 @@ export async function GET(request: Request) {
   const messageId = Number(url.searchParams.get("messageId") ?? 1);
 
   try {
-    const GetSeries = await prisma.getSeries.findMany({
+    const GetSeries = await prisma.getSeries.findUnique({
       where: {
         messageId: String(messageId),
       },
