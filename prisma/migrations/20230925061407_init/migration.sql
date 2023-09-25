@@ -73,14 +73,26 @@ CREATE TABLE `Series` (
     `slug` VARCHAR(191) NOT NULL,
     `title` VARCHAR(191) NOT NULL,
     `priceType` ENUM('Points', 'Dollar', 'Euro') NOT NULL DEFAULT 'Dollar',
-    `priceTl` VARCHAR(191) NOT NULL,
-    `priceEd` VARCHAR(191) NOT NULL,
-    `pricePr` VARCHAR(191) NOT NULL,
+    `priceTl` INTEGER NOT NULL,
+    `priceEd` INTEGER NOT NULL,
+    `pricePr` INTEGER NOT NULL,
     `userId` VARCHAR(191) NULL,
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     `updatedAt` DATETIME(3) NOT NULL,
 
     UNIQUE INDEX `Series_slug_key`(`slug`),
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `GetSeries` (
+    `id` VARCHAR(191) NOT NULL,
+    `messageId` VARCHAR(191) NOT NULL,
+    `per_page` INTEGER NOT NULL,
+    `page` INTEGER NOT NULL,
+    `search` VARCHAR(191) NULL,
+
+    UNIQUE INDEX `GetSeries_messageId_key`(`messageId`),
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
