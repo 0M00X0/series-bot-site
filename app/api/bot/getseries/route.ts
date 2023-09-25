@@ -13,7 +13,7 @@ export async function GET(request: Request) {
       },
     });
     return NextResponse.json(GetSeries);
-  } catch (error) {
+  } catch (error) { 
     console.error("error", error);
     return new NextResponse("Internal Server Error", { status: 500 });
   }
