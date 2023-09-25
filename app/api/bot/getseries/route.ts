@@ -40,7 +40,8 @@ export async function POST(request: Request) {
 
 export async function PUT(request: Request) {
   const body = await request.json();
-  const { id } = body;
+  const url = new URL(request.url);
+  const id = Number(url.searchParams.get("id") ?? 1);
 
   try {
     const GetSeries = await prisma.getSeries.update({
@@ -48,10 +49,7 @@ export async function PUT(request: Request) {
         id: String(id),
       },
       data: {
-        messageId: body.messageId,
-        per_page: body.per_page,
         page: body.page,
-        search: body.search,
       },
     });
     return NextResponse.json(GetSeries);
